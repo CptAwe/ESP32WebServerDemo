@@ -14,7 +14,7 @@ The first sketch I tried was the Example > WiFi > WiFiScan. Serial output shown 
 
 To pass files on the ESP32 an additional tool is needed. This tool can be found [here](https://github.com/me-no-dev/arduino-esp32fs-plugin).
 
-# Sources:
+## Sources:
 
 * https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-mac-and-linux-instructions/
 * https://randomnerdtutorials.com/esp32-access-point-ap-web-server/
