@@ -19,8 +19,11 @@ const char index_html[] PROGMEM = R"rawliteral(
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <h2>Happy Birthday!</h2>
-  <img src="img">
+  <h2>Hello!</h2>
+  <img src="img" style="max-width: 100%; height: auto">
+
+  <h2>How I am made:</h2>
+  <img src="gitqr" style="max-width: 100%; height: auto">
 </body>  
 </html>)rawliteral";
 
@@ -60,6 +63,15 @@ void setup() {
     HTTP_GET,
     [](AsyncWebServerRequest *request) {
       request->send(SPIFFS, "/qr.png", "image/png");
+    }
+  );
+  
+  // The qr for the git repo link
+  server.on(
+    "/gitqr",
+    HTTP_GET,
+    [](AsyncWebServerRequest *request) {
+      request->send(SPIFFS, "/gitrepo.png", "image/png");
     }
   );
   
