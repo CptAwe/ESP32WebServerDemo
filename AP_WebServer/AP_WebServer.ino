@@ -21,14 +21,11 @@ const char index_html[] PROGMEM = R"rawliteral(
 </head>
 <body>
   <h2>Hello!</h2>
-  <img src="img" style="max-width: 100%; height: auto">
+  <img src="gif" style="max-width: 100%; height: auto">
 
   <p>
     <button id="toggleledbtn" type="button">Flash Me!</button>
   </p>
-
-  <h2>How I am made:</h2>
-  <img src="gitqr" style="max-width: 100%; height: auto">
 
   <script>
     var button = document.getElementById('toggleledbtn');
@@ -88,19 +85,10 @@ void setup() {
 
   // The image
   server.on(
-    "/img",
+    "/gif",
     HTTP_GET,
     [](AsyncWebServerRequest *request) {
-      request->send(SPIFFS, "/qr.png", "image/png");
-    }
-  );
-  
-  // The qr for the git repo link
-  server.on(
-    "/gitqr",
-    HTTP_GET,
-    [](AsyncWebServerRequest *request) {
-      request->send(SPIFFS, "/gitrepo.png", "image/png");
+      request->send(SPIFFS, "/rickroll.gif", "image/gif");
     }
   );
 
